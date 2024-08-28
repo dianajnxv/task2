@@ -2,7 +2,7 @@ def reverse_word(word):
     letters = list(word)
     start = 0
     end = len(letters) - 1
-
+            
     while start < end:
         if not letters[start].isalpha():
             start += 1
@@ -12,10 +12,10 @@ def reverse_word(word):
             letters[start], letters[end] = letters[end], letters[start]
             start += 1
             end -= 1
-
+    
     return ''.join(letters)
 
-def reverse_words(text):
+def reversed_words(text):
     words = text.split()
     result_words = [reverse_word(word) for word in words]
     return ' '.join(result_words)
@@ -26,7 +26,7 @@ if __name__ == '__main__':
         ("a1bcd efg!h", "d1cba hgf!e"),
         ("", ""),
     ]
-
+        
     for text, reversed_text in cases:
         result = reverse_words(text)
         print(f"Original: {text} -> Reversed: {result}")
